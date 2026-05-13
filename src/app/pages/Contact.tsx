@@ -27,15 +27,30 @@ export function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-black mb-4">Get In Touch</h1>
-        <p className="text-muted-foreground text-lg">
-          We'd love to hear from you. Reach out anytime!
-        </p>
-      </div>
+    <div className="min-h-screen">
+      {/* Contact Hero with CEO Background */}
+      <section className="relative py-24 px-4 overflow-hidden mb-12">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/image-1.png"
+            alt="Vibe District CEO"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="relative z-10 max-w-7xl mx-auto text-center pt-20">
+          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-foreground drop-shadow-2xl">
+            Get In <span className="text-accent">Touch</span>
+          </h1>
+          <p className="text-xl md:text-2xl font-bold text-muted-foreground max-w-2xl mx-auto backdrop-blur-sm bg-background/20 py-2 rounded-full px-8">
+            We'd love to hear from you. Reach out anytime!
+          </p>
+        </div>
+      </section>
+
+      <div className="py-8 px-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div className="bg-card p-8 rounded-lg shadow-md">
           <h2 className="text-2xl font-black mb-6">Send Us a Message</h2>
