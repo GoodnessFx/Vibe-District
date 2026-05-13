@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MapPin, Phone, Instagram, Mail } from "lucide-react";
 import { toast } from "sonner";
+import { motion } from "motion/react";
 import { WhatsAppIcon } from "../components/ui/WhatsAppIcon";
 
 export function Contact() {
@@ -29,25 +30,34 @@ export function Contact() {
   return (
     <div className="min-h-screen">
       {/* Contact Hero with CEO Background */}
-      <section className="relative py-24 px-4 overflow-hidden mb-12">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/image-1.png"
-            alt="Vibe District CEO"
-            className="w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto text-center pt-20">
-          <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-foreground drop-shadow-2xl">
-            Get In <span className="text-accent">Touch</span>
-          </h1>
-          <p className="text-xl md:text-2xl font-bold text-muted-foreground max-w-2xl mx-auto backdrop-blur-sm bg-background/20 py-2 rounded-full px-8">
-            We'd love to hear from you. Reach out anytime!
-          </p>
-        </div>
-      </section>
+      <section className="relative py-32 px-4 overflow-hidden mb-12 min-h-[60vh] flex items-center justify-center">
+         <div className="absolute inset-0 z-0">
+           <img
+             src="/ceo.jpeg"
+             alt="Vibe District CEO"
+             className="w-full h-full object-cover object-[center_25%]"
+           />
+           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-background"></div>
+         </div>
+ 
+         <div className="relative z-10 max-w-7xl mx-auto text-center">
+           <motion.h1 
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             className="text-7xl md:text-9xl font-black mb-6 tracking-tighter text-white drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
+           >
+             Get In <span className="text-accent">Touch</span>
+           </motion.h1>
+           <motion.p 
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: 0.2 }}
+             className="text-xl md:text-3xl font-bold text-white max-w-2xl mx-auto backdrop-blur-md bg-black/30 py-4 rounded-2xl px-8 border border-white/10"
+           >
+             We'd love to hear from you. Reach out anytime!
+           </motion.p>
+         </div>
+       </section>
 
       <div className="py-8 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
