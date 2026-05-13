@@ -1,0 +1,199 @@
+You are a senior UI/UX designer and full-stack developer with 20+ years of experience building high-converting streetwear e-commerce platforms. Build a complete, fully functional, mobile-first e-commerce website for a premium headwear brand called "VIBE DISTRICT" based in Moremi Building, OUI, Lagos. Every interaction must feel smooth. Every page must convert. Every pixel must reflect street culture done at a luxury level.
+
+BRAND IDENTITY
+
+Brand Name: VIBE DISTRICT
+Products: Snapbacks, Durags, Fitted Caps, Custom Caps, All Caps
+Location: Moremi Building, OUI
+WhatsApp: 08124959426 / 08142407269
+Instagram: @vibedistrict
+Vibe: Premium streetwear, Lagos culture, clean and confident
+Color Palette: Matte black, cream/off-white, warm gold, deep charcoal
+Typography: Heavy condensed display font (headings) + clean sans-serif (body)
+Mood: Think ASOS meets Supreme meets a Lagos streetwear brand
+
+
+PAGES TO BUILD
+1. HOME PAGE
+
+Full-screen hero with lifestyle photo of model wearing Vibe District cap — same energy as the fliers provided
+Animated headline fades in: "It's More Than a Cap. It's a Statement."
+Two CTA buttons: "Shop Now" and "View Lookbook"
+Scrolling marquee ticker: "NEW DROPS ✦ SNAPBACKS ✦ DURAGS ✦ CUSTOM CAPS ✦ FREE DELIVERY ON ORDERS ABOVE ₦X"
+Featured Products section — 4 best sellers with Add to Cart
+Brand values strip: Fast Delivery · Bulk Orders Welcome · Quality Guaranteed · Perfect Gift
+Instagram feed section pulling latest @vibedistrict posts
+Floating WhatsApp button fixed on every page — clicking opens WhatsApp chat directly to 08142407269 with pre-filled message: "Hi Vibe District, I'd like to place an order!"
+Navigation: Logo left, cart icon + hamburger right on mobile, full nav on desktop
+
+2. SHOP / PRODUCT LISTING PAGE
+
+Clean grid — 2 columns mobile, 3–4 columns desktop
+Filter sidebar/drawer: Category (Snapbacks / Durags / Fitted Caps / Custom / All), Colour, Price Range, Availability
+Sort by: Newest, Price Low–High, Price High–Low, Best Selling
+Each product card shows: product photo, name, price, colour swatches, Add to Cart button, Quick View option
+Hover effect — second product photo slides in (lifestyle shot vs product shot)
+"Low Stock" and "New Arrival" badges on relevant items
+Lazy loading for performance
+
+3. SINGLE PRODUCT PAGE
+
+Large product image gallery — swipe on mobile, click to zoom on desktop
+Multiple photo angles — flat lay, lifestyle, close-up of embroidery
+Product name, price in ₦, short description
+Colour selector — visual swatches
+Size/fit guide popup
+Quantity selector
+Two action buttons: "Add to Cart" and "Order via WhatsApp" — WhatsApp button sends pre-filled message with product name, colour, and quantity directly to seller
+Product details accordion: Material, Care Instructions, Dimensions
+Shipping & Delivery info tab
+Related products carousel at bottom
+Customer reviews section with star ratings
+Share buttons: WhatsApp, Instagram, Copy Link
+
+4. CART PAGE
+
+Clean minimal cart layout
+Product image, name, colour, quantity adjuster, remove button
+Order summary: Subtotal, Delivery fee, Total in ₦
+Promo/discount code field
+Two checkout options:
+
+"Checkout Online" — proceeds to checkout form
+"Order via WhatsApp" — sends full cart summary as WhatsApp message to seller automatically
+
+
+Saved cart — items persist even if user closes browser
+
+5. CHECKOUT PAGE
+
+Multi-step clean checkout flow:
+
+Step 1: Contact Info — Full name, phone number, WhatsApp number, email (optional)
+Step 2: Delivery Details — Delivery address, city, state, landmark (for Lagos delivery precision), delivery method (home delivery or pickup at Moremi Building)
+Step 3: Order Review — full recap of items, quantities, total
+Step 4: Payment — Bank transfer details shown clearly with account name/number, option to upload payment proof, or "Pay on Delivery" option (seller's discretion)
+
+
+On order confirmation:
+
+Customer sees: "Order placed! Vibe District will confirm within 1 hour via WhatsApp."
+Seller (08142407269) receives automatic WhatsApp message with full order details: customer name, items, quantities, delivery address, phone number
+Customer receives WhatsApp confirmation automatically
+
+
+
+6. LOOKBOOK / GALLERY PAGE
+
+Editorial lifestyle grid — full bleed photography
+Filter: All / Snapbacks / Durags / Fits
+Lightbox popup on click
+Each photo has "Shop This Look" button linking to relevant product
+Smooth scroll fade-in animations
+
+7. ABOUT PAGE
+
+Brand story — who Vibe District is, what the brand stands for
+"Available in Multiple Colours" section showcasing colour range
+Trust section: Quality Guaranteed, Bulk Orders Welcome, Fast Delivery, Premium Embroidery
+Team/founder section optional
+
+8. CONTACT PAGE
+
+Contact form: Name, Phone, Message — submits via WhatsApp
+WhatsApp direct chat button
+Phone numbers listed clearly
+Embedded Google Maps — Moremi Building, OUI
+Social links: Instagram @vibedistrict, WhatsApp
+Business hours
+
+9. TRACK ORDER PAGE
+
+Simple form — customer enters phone number or order reference
+Shows order status: Confirmed → Processing → Dispatched → Delivered
+WhatsApp button to follow up directly
+
+
+GLOBAL FEATURES — NON-NEGOTIABLE
+
+Fully mobile responsive — pixel perfect on all screen sizes, especially mobile (80% of your customers are on phone)
+WhatsApp floating button on every single page — pre-filled message, one tap to contact
+Page load animation — Vibe District logo fade in
+Smooth scroll throughout
+Custom cursor on desktop
+All transitions 0.3s ease — nothing janky
+SEO optimized — meta titles, image alt texts, Open Graph for WhatsApp/social sharing
+Fast load speed — compressed images, lazy loading
+Cookie consent banner
+404 page — branded
+Back to top button
+QR code on site linking to WhatsApp (mirror the flier design)
+Low stock notifications — "Only 3 left!"
+Recently viewed products section
+Search bar with instant results
+
+
+WHATSAPP ORDER FLOW (MOST IMPORTANT)
+Every "Order via WhatsApp" button must generate a pre-filled message in this exact format sent to 08142407269:
+Hi Vibe District! 👋
+
+I'd like to place an order:
+
+🧢 Product: [Product Name]
+🎨 Colour: [Selected Colour]
+🔢 Quantity: [Qty]
+💰 Total: ₦[Amount]
+
+📦 Delivery to: [Address]
+📱 My number: [Phone]
+
+Please confirm availability. Thank you!
+This means customers never need to figure out what to say — one tap and the message is ready.
+
+ADMIN / SELLER DASHBOARD
+Simple dashboard for the Vibe District owner to:
+
+See all incoming orders
+Mark orders as: Confirmed / Processing / Dispatched / Delivered
+Update stock levels — when stock hits 0, product auto-shows "Out of Stock"
+Add new products with photos, price, colours
+Apply discount codes
+See sales analytics: total orders, revenue, best-selling products
+Export order list as CSV or WhatsApp it to self
+
+
+E-COMMERCE LOGIC
+
+Product inventory tracking — stock count updates when orders are confirmed
+Bulk order discount — automatically applies % off when quantity exceeds threshold (e.g. 10+ units)
+Promo code system — percentage or fixed amount off
+Related products algorithm — shows similar items
+Wishlist — customers can save items (no account needed, saved in browser)
+Guest checkout — no forced account creation
+Optional account creation — saves order history and delivery address for repeat customers
+Abandoned cart recovery — if customer adds to cart but doesn't checkout, show reminder popup on return
+
+
+EXTRA TOUCHES THAT MAKE IT WORLD CLASS
+
+"Build Your Bundle" feature — pick 2 caps + 1 durag, get X% off
+Gift wrapping option at checkout — "This is a gift, add a note"
+Refer a friend — share link, both get discount
+Size/fit guide popup on every product — "How to measure your head size"
+Before/after or style inspiration section — same cap, 3 different outfit styles
+Seasonal banner — "Special Sale — Up to 25% Off. Limited Time!" (matches current flier)
+Pop-up for first-time visitors: "Get 10% off your first order — use code: VIBE10"
+Live chat widget option (or WhatsApp chat)
+Review system — customers can submit photo reviews
+Social proof ticker: "Chidi from Lagos just ordered a Black Snapback 2 minutes ago"
+
+
+TECH STACK RECOMMENDATION
+
+Option A (Fastest to launch): Shopify — install, customize, done. Add WhatsApp Order Button app. Best for non-developers.
+Option B (Full custom): Next.js + Tailwind CSS + Stripe/Paystack for payments + Sanity CMS for product management + Vercel hosting
+Option C (No-code fast): Framer or Webflow + WhatsApp order links + Paystack payment links embedded
+WhatsApp Integration: wa.me links with pre-filled messages (no API needed, works instantly)
+Payment: Paystack (best for Nigeria — handles cards, bank transfer, USSD)
+Hosting: Vercel or Netlify
+Domain suggestion: vibedistrict.com or vibedistrict.ng
