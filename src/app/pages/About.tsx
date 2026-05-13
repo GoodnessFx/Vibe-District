@@ -27,23 +27,42 @@ export function About() {
       </section>
 
       {/* Story */}
-      <section className="py-16 px-4 max-w-4xl mx-auto">
-        <div className="prose prose-lg max-w-none">
-          <h2 className="text-3xl font-black mb-4">Our Story</h2>
-          <p className="text-muted-foreground mb-4">
-            Born in the heart of Lagos, Vibe District represents the fusion of premium quality
-            and authentic street culture. We believe that headwear is more than just an
-            accessory—it's a statement of identity, a reflection of your vibe.
-          </p>
-          <p className="text-muted-foreground mb-4">
-            Every cap and durag we create is designed with meticulous attention to detail,
-            using only the finest materials. From classic snapbacks to custom-embroidered
-            pieces, each product tells a story of craftsmanship and style.
-          </p>
-          <p className="text-muted-foreground">
-            Whether you're stepping out in the city or making waves online, Vibe District has
-            you covered—literally.
-          </p>
+      <section className="relative py-24 px-4 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+           <img
+             src="/image.png"
+             alt="Our Story Background"
+             className="w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"></div>
+         </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto text-white">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="bg-black/40 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-md"
+          >
+            <h2 className="text-4xl font-black mb-8 text-accent">Our Story</h2>
+            <div className="space-y-6 text-lg md:text-xl font-medium text-white/90 leading-relaxed">
+              <p>
+                Born in the heart of Lagos, <span className="text-accent font-black">Vibe District</span> represents the fusion of premium quality
+                and authentic street culture. We believe that headwear is more than just an
+                accessory—it's a statement of identity, a reflection of your vibe.
+              </p>
+              <p>
+                Every cap and durag we create is designed with meticulous attention to detail,
+                using only the finest materials. From classic snapbacks to custom-embroidered
+                pieces, each product tells a story of craftsmanship and style.
+              </p>
+              <p>
+                Whether you're stepping out in the city or making waves online, Vibe District has
+                you covered—literally.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 

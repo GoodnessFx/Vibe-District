@@ -6,37 +6,37 @@ import { motion } from "motion/react";
 const lookbookImages = [
   {
     id: 1,
-    src: "/src/imports/image.png",
+    src: "/image.png",
     category: "snapback",
     productId: "1",
   },
   {
     id: 2,
-    src: "/src/imports/image-1.png",
+    src: "/image-1.png",
     category: "lifestyle",
     productId: "2",
   },
   {
     id: 3,
-    src: "/src/imports/image.png",
+    src: "/image.png",
     category: "durag",
     productId: "4",
   },
   {
     id: 4,
-    src: "/src/imports/image-1.png",
+    src: "/image-1.png",
     category: "snapback",
     productId: "3",
   },
   {
     id: 5,
-    src: "/src/imports/image.png",
+    src: "/image.png",
     category: "lifestyle",
     productId: "1",
   },
   {
     id: 6,
-    src: "/src/imports/image-1.png",
+    src: "/image-1.png",
     category: "snapback",
     productId: "2",
   },

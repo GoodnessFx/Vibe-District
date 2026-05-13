@@ -22,7 +22,7 @@ export function Home() {
       <section className="relative h-[600px] md:h-[700px] flex items-center justify-center bg-gradient-to-br from-primary via-muted-foreground to-primary text-primary-foreground">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <img
-          src="/src/imports/image-1.png"
+          src="/image-1.png"
           alt="Vibe District Hero"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
