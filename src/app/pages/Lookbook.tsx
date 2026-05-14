@@ -42,7 +42,7 @@ const lookbookImages = [
   },
   {
     id: 7,
-    src: "/products/Beanie army design 01.jpeg",
+    src: "/products/Beanie Army design 01.jpeg",
     category: "lifestyle",
     productId: "beanie-1",
   },

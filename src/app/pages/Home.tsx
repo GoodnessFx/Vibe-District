@@ -203,7 +203,7 @@ export function Home() {
               className="aspect-square bg-muted rounded-lg overflow-hidden hover:scale-105 transition-transform"
             >
               <img
-                src={i % 2 === 0 ? "src/imports/image.png" : "src/imports/image-1.png"}
+                src={i % 2 === 0 ? "/image.png" : "/image-1.png"}
                 alt={`Instagram post ${i + 1}`}
                 className="w-full h-full object-cover"
               />
