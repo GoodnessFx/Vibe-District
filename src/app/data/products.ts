@@ -62,6 +62,7 @@ export const products: Product[] = [
     description: "Keep warm and stylish with our premium beanies. High-quality knit with various designs. Premium, affordable, and high-quality.",
     stock: 40,
     isNew: true,
+    isBestSeller: true,
   },
   {
     id: "finger-sleeves-1",

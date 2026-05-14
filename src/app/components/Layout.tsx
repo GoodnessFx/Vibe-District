@@ -140,7 +140,7 @@ export function Layout() {
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://instagram.com/vibedistrict"
+                  href="https://www.instagram.com/vibe_district0?igsh=MXE0YXR3NHlncGYzMQ=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-accent transition-colors"
@@ -180,7 +180,7 @@ export function Layout() {
               <div className="space-y-2 text-primary-foreground/80">
                 <p>Moremi Building, OUI, Lagos</p>
                 <p>08140082457</p>
-                <p>@vibedistrict</p>
+                <p>@vibe_district0</p>
               </div>
             </div>
           </div>

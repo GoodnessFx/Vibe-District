@@ -38,7 +38,25 @@ const lookbookImages = [
     id: 6,
     src: "/products/cap sky blue.jpeg",
     category: "snapback",
-    productId: "snapback-1",
+    productId: "cap-1",
+  },
+  {
+    id: 7,
+    src: "/products/Beanie army design 01.jpeg",
+    category: "lifestyle",
+    productId: "beanie-1",
+  },
+  {
+    id: 8,
+    src: "/products/Beanie grey cross.jpeg",
+    category: "lifestyle",
+    productId: "beanie-1",
+  },
+  {
+    id: 9,
+    src: "/products/cap blue green.jpeg",
+    category: "snapback",
+    productId: "cap-1",
   },
 ];
 

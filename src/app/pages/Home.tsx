@@ -183,10 +183,10 @@ export function Home() {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black mb-4">Follow The Vibe</h2>
           <p className="text-muted-foreground text-lg mb-4">
-            @vibedistrict on Instagram
+            @vibe_district0 on Instagram
           </p>
           <a
-            href="https://instagram.com/vibedistrict"
+            href="https://www.instagram.com/vibe_district0?igsh=MXE0YXR3NHlncGYzMQ=="
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-accent font-bold hover:underline"

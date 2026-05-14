@@ -6,12 +6,21 @@ export function About() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-muted-foreground text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+      <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden bg-black text-white">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/image-1.png"
+            alt="About Vibe District"
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-black mb-6"
+            className="text-6xl md:text-8xl font-black mb-6 tracking-tighter"
           >
             About <span className="text-accent">Vibe District</span>
           </motion.h1>
@@ -19,7 +28,7 @@ export function About() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-primary-foreground/90"
+            className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto"
           >
             Premium streetwear caps and durags crafted for every vibe, every lifestyle.
           </motion.p>
@@ -167,7 +176,7 @@ export function About() {
           <h2 className="text-4xl font-black mb-4">Visit Us</h2>
           <p className="text-xl mb-2">Moremi Building, OUI, Lagos</p>
           <p className="text-primary-foreground/80 mb-6">
-            Open Monday - Saturday, 10am - 7pm
+            Open All Week, 10am - 7pm
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

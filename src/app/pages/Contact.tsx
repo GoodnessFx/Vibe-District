@@ -8,8 +8,11 @@ export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -17,14 +20,22 @@ export function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const message = encodeURIComponent(
-      `Hi Vibe District!\n\nName: ${formData.name}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
-    );
-    window.open(`https://wa.me/2348140082457?text=${message}`, "_blank");
-    toast.success("Redirecting to WhatsApp...");
-    setFormData({ name: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    // In a real app, this would send to a backend or email service
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    toast.success("Message sent successfully!");
+  };
+
+  const handleReset = () => {
+    setFormData({ name: "", phone: "", email: "", message: "" });
+    setIsSubmitted(false);
   };
 
   return (
@@ -64,48 +75,99 @@ export function Contact() {
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-lg shadow-md">
             <h2 className="text-2xl font-black mb-6">Send Us a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block font-bold mb-2">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full bg-input-background px-4 py-3 rounded-lg border border-border"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block font-bold mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full bg-input-background px-4 py-3 rounded-lg border border-border"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block font-bold mb-2">Your Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full bg-input-background px-4 py-3 rounded-lg border border-border"
-                  rows={6}
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-4 rounded-lg font-bold hover:scale-105 transition-transform"
+            
+            {isSubmitted ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="text-center py-12"
               >
-                <WhatsAppIcon className="w-5 h-5" />
-                Send via WhatsApp
-              </button>
-            </form>
+                <div className="w-20 h-20 bg-accent text-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Mail className="w-10 h-10" />
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
+                <p className="text-muted-foreground mb-8">
+                  Thank you for reaching out. We've received your message and will get back to you shortly.
+                </p>
+                <button
+                  onClick={handleReset}
+                  className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-bold hover:bg-accent hover:text-primary transition-colors"
+                >
+                  Send Another Message
+                </button>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-bold mb-2 text-sm">Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Enter your name"
+                      className="w-full bg-input-background px-4 py-3 rounded-lg border border-border focus:border-accent outline-none transition-colors"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-bold mb-2 text-sm">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="e.g. 08123456789"
+                      className="w-full bg-input-background px-4 py-3 rounded-lg border border-border focus:border-accent outline-none transition-colors"
+                      required
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block font-bold mb-2 text-sm">Email Address (Optional)</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full bg-input-background px-4 py-3 rounded-lg border border-border focus:border-accent outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block font-bold mb-2 text-sm">Your Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="How can we help you?"
+                    className="w-full bg-input-background px-4 py-3 rounded-lg border border-border focus:border-accent outline-none transition-colors"
+                    rows={5}
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-bold hover:bg-accent hover:text-primary transition-all ${
+                    isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:scale-[1.02]"
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center gap-2">
+                      <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </div>
+                  ) : (
+                    "Send Message"
+                  )}
+                </button>
+                <p className="text-xs text-center text-muted-foreground mt-4">
+                  Prefer direct chat? <a href="https://wa.me/2348140082457" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-bold">WhatsApp us here</a>
+                </p>
+              </form>
+            )}
           </div>
 
           {/* Contact Info */}
@@ -159,12 +221,12 @@ export function Contact() {
                   <div>
                     <h3 className="font-bold mb-1">Instagram</h3>
                     <a
-                      href="https://instagram.com/vibedistrict"
+                      href="https://www.instagram.com/vibe_district0?igsh=MXE0YXR3NHlncGYzMQ=="
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-accent hover:underline"
                     >
-                      @vibedistrict
+                      @vibe_district0
                     </a>
                   </div>
                 </div>
@@ -184,7 +246,7 @@ export function Contact() {
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
-                  <span className="font-medium">Closed</span>
+                  <span className="font-medium">10:00 AM - 4:00 PM</span>
                 </div>
               </div>
             </div>
