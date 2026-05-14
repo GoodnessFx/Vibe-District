@@ -57,7 +57,7 @@ export const products: Product[] = [
       "/products/Beanie flor.jpeg",
       "/products/Beanie grey cross.jpeg",
       "/products/Beanie lego fashion.jpeg",
-      "/products/beanie inspiration.jpeg", // Joining the beanie collection
+      "/products/beanie inspiration.jpeg", // 6-pack image joining the beanie collection
     ],
     description: "Keep warm and stylish with our premium beanies. High-quality knit with various designs. Premium, affordable, and high-quality.",
     stock: 40,
@@ -84,7 +84,7 @@ export const products: Product[] = [
     category: "skull-cap",
     colors: ["Black", "Camo", "Olive", "Grey"],
     images: [
-      "/products/beanie inspiration.jpeg", // This is the 6-pack image
+      "/products/beanie inspiration.jpeg", // The black patterned skull cap (first image)
     ],
     description: "Sleek Skull Cap. Perfect for under-helmet wear or as a minimal head covering. Premium, affordable, and quality.",
     stock: 30,
