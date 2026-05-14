@@ -95,9 +95,12 @@ export const products: Product[] = [
     price: 15000,
     category: "custom",
     colors: ["Any Color"],
-    images: [], // Removed image for coming soon
-    description: "COMING SOON: Create your own design! Add your name, logo, or custom embroidery. Contact us for details.",
-    stock: 0,
+    images: [
+      "/products/cap sky blue.jpeg", // Using sky blue as placeholder for custom
+    ],
+    description: "PREORDER: Create your own design! Add your name, logo, or custom embroidery. Hand-crafted specifically for you.",
+    stock: 99,
     isNew: true,
+    isPreorder: true,
   },
 ];

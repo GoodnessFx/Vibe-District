@@ -150,16 +150,21 @@ export function Shop() {
                   ) : (
                     <div className="flex flex-col items-center justify-center p-8 text-center">
                       <p className="font-black text-2xl text-muted-foreground/30 uppercase tracking-widest">
-                        Coming Soon
+                        Image Pending
                       </p>
                     </div>
+                  )}
+                  {product.isPreorder && (
+                    <span className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-black tracking-wider">
+                      PREORDER
+                    </span>
                   )}
                   {product.isNew && (
                     <span className="absolute top-4 right-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold">
                       NEW
                     </span>
                   )}
-                  {product.stock <= 5 && (
+                  {!product.isPreorder && product.stock <= 5 && product.stock > 0 && (
                     <span className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">
                       Only {product.stock} left!
                     </span>

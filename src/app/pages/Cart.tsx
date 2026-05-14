@@ -88,11 +88,16 @@ export function Cart() {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <Link
-                        to={`/product/${item.product.id}`}
-                        className="font-black text-xl hover:text-accent transition-colors block"
-                      >
-                        {item.product.name}
-                      </Link>
+                      to={`/product/${item.product.id}`}
+                      className="font-black text-xl hover:text-accent transition-colors block"
+                    >
+                      {item.product.name}
+                      {item.product.isPreorder && (
+                        <span className="ml-2 text-xs bg-orange-500 text-white px-2 py-0.5 rounded font-black uppercase tracking-tighter">
+                          Preorder
+                        </span>
+                      )}
+                    </Link>
                       <p className="text-muted-foreground font-medium">Colour: {item.color}</p>
                     </div>
                     <button

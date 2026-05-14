@@ -128,6 +128,11 @@ export function ProductDetail() {
               NEW ARRIVAL
             </span>
           )}
+          {product.isPreorder && (
+            <span className="inline-block bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-black tracking-wider mb-4 ml-2">
+              PREORDER
+            </span>
+          )}
           <h1 className="text-4xl font-black mb-4">{product.name}</h1>
           <p className="text-3xl font-black text-accent mb-6">
             ₦{product.price.toLocaleString()}
@@ -136,7 +141,9 @@ export function ProductDetail() {
           <p className="text-muted-foreground mb-6">{product.description}</p>
 
           {/* Stock Status */}
-          {product.stock <= 5 ? (
+          {product.isPreorder ? (
+            <p className="text-orange-500 font-bold mb-4">★ Preorder item (Ships in 7-14 days)</p>
+          ) : product.stock <= 5 ? (
             <p className="text-destructive font-bold mb-4">
               ⚠️ Only {product.stock} left in stock!
             </p>
@@ -193,7 +200,7 @@ export function ProductDetail() {
               className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-4 rounded-lg font-bold hover:bg-accent hover:text-primary transition-colors"
             >
               <ShoppingCart className="w-5 h-5" />
-              Add to Cart
+              {product.isPreorder ? "Preorder Now" : "Add to Cart"}
             </button>
             <button
               onClick={handleWhatsAppOrder}

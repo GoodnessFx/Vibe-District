@@ -9,6 +9,7 @@ export interface Product {
   stock: number;
   isNew?: boolean;
   isBestSeller?: boolean;
+  isPreorder?: boolean;
 }
 
 export interface CartItem {
