@@ -65,67 +65,74 @@ export function Cart() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* Cart Items */}
         <div className="lg:col-span-2 space-y-6">
-          {cart.map((item) => (
-            <div
-              key={`${item.product.id}-${item.color}`}
-              className="group bg-card rounded-2xl p-6 flex gap-6 shadow-sm hover:shadow-md transition-all border border-border/50"
-            >
-              <div className="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden bg-muted">
-                <img
-                  src={item.product.images[0]}
-                  alt={item.product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              
-              <div className="flex-1 flex flex-col">
-                <div className="flex justify-between items-start mb-2">
-                  <div>
-                    <Link
-                      to={`/product/${item.product.id}`}
-                      className="font-black text-xl hover:text-accent transition-colors block"
-                    >
-                      {item.product.name}
-                    </Link>
-                    <p className="text-muted-foreground font-medium">Colour: {item.color}</p>
-                  </div>
-                  <button
-                    onClick={() => removeFromCart(item.product.id, item.color)}
-                    className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-all"
-                    title="Remove item"
-                  >
-                    <Trash2 className="w-5 h-5" />
-                  </button>
-                </div>
+          {cart.map((item) => {
+            const colorIndex = item.product.colors.indexOf(item.color);
+            const itemImage = colorIndex !== -1 && item.product.images[colorIndex] 
+              ? item.product.images[colorIndex] 
+              : item.product.images[0];
 
-                <div className="mt-auto flex items-center justify-between">
-                  <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-xl border border-border">
+            return (
+              <div
+                key={`${item.product.id}-${item.color}`}
+                className="group bg-card rounded-2xl p-6 flex gap-6 shadow-sm hover:shadow-md transition-all border border-border/50"
+              >
+                <div className="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden bg-muted">
+                  <img
+                    src={itemImage}
+                    alt={item.product.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                
+                <div className="flex-1 flex flex-col">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <Link
+                        to={`/product/${item.product.id}`}
+                        className="font-black text-xl hover:text-accent transition-colors block"
+                      >
+                        {item.product.name}
+                      </Link>
+                      <p className="text-muted-foreground font-medium">Colour: {item.color}</p>
+                    </div>
                     <button
-                      onClick={() =>
-                        updateQuantity(item.product.id, item.color, item.quantity - 1)
-                      }
-                      className="p-2 hover:bg-card rounded-lg transition-colors disabled:opacity-50"
-                      disabled={item.quantity <= 1}
+                      onClick={() => removeFromCart(item.product.id, item.color)}
+                      className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-all"
+                      title="Remove item"
                     >
-                      <Minus className="w-4 h-4" />
-                    </button>
-                    <span className="font-black w-10 text-center text-lg">{item.quantity}</span>
-                    <button
-                      onClick={() =>
-                        updateQuantity(item.product.id, item.color, item.quantity + 1)
-                      }
-                      className="p-2 hover:bg-card rounded-lg transition-colors"
-                    >
-                      <Plus className="w-4 h-4" />
+                      <Trash2 className="w-5 h-5" />
                     </button>
                   </div>
-                  <p className="text-2xl font-black">
-                    ₦{(item.product.price * item.quantity).toLocaleString()}
-                  </p>
+
+                  <div className="mt-auto flex items-center justify-between">
+                    <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-xl border border-border">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.product.id, item.color, item.quantity - 1)
+                        }
+                        className="p-2 hover:bg-card rounded-lg transition-colors disabled:opacity-50"
+                        disabled={item.quantity <= 1}
+                      >
+                        <Minus className="w-4 h-4" />
+                      </button>
+                      <span className="font-black w-10 text-center text-lg">{item.quantity}</span>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.product.id, item.color, item.quantity + 1)
+                        }
+                        className="p-2 hover:bg-card rounded-lg transition-colors"
+                      >
+                        <Plus className="w-4 h-4" />
+                      </button>
+                    </div>
+                    <p className="text-2xl font-black">
+                      ₦{(item.product.price * item.quantity).toLocaleString()}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
 
           <div className="flex justify-between items-center pt-4">
             <Link

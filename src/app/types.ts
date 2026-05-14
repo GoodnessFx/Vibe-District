@@ -2,7 +2,7 @@ export interface Product {
   id: string;
   name: string;
   price: number;
-  category: "snapback" | "durag" | "fitted" | "custom";
+  category: "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap";
   colors: string[];
   images: string[];
   description: string;

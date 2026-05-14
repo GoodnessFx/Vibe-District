@@ -5,7 +5,7 @@ import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { motion } from "motion/react";
 
-type Category = "all" | "snapback" | "durag" | "fitted" | "custom";
+type Category = "all" | "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap";
 type SortBy = "newest" | "price-low" | "price-high" | "best-selling";
 
 export function Shop() {
@@ -78,7 +78,9 @@ export function Shop() {
                 { value: "all", label: "All Products" },
                 { value: "snapback", label: "Snapbacks" },
                 { value: "durag", label: "Durags" },
-                { value: "fitted", label: "Fitted Caps" },
+                { value: "beanie", label: "Beanies" },
+                { value: "finger-sleeves", label: "Finger Sleeves" },
+                { value: "skull-cap", label: "Skull Caps" },
                 { value: "custom", label: "Custom Caps" },
               ].map((cat) => (
                 <label key={cat.value} className="flex items-center gap-2 cursor-pointer">

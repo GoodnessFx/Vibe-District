@@ -6,39 +6,39 @@ import { motion } from "motion/react";
 const lookbookImages = [
   {
     id: 1,
-    src: "/image.png",
+    src: "/products/cap black.jpeg",
     category: "snapback",
-    productId: "1",
+    productId: "snapback-1",
   },
   {
     id: 2,
-    src: "/image-1.png",
+    src: "/products/Beanie fashion.jpeg",
     category: "lifestyle",
-    productId: "2",
+    productId: "beanie-1",
   },
   {
     id: 3,
-    src: "/image.png",
+    src: "/products/durag.jpeg",
     category: "durag",
-    productId: "4",
+    productId: "durag-1",
   },
   {
     id: 4,
-    src: "/image-1.png",
+    src: "/products/cap red.jpeg",
     category: "snapback",
-    productId: "3",
+    productId: "snapback-1",
   },
   {
     id: 5,
-    src: "/image.png",
+    src: "/products/finger sleeves.jpeg",
     category: "lifestyle",
-    productId: "1",
+    productId: "finger-sleeves-1",
   },
   {
     id: 6,
-    src: "/image-1.png",
+    src: "/products/cap sky blue.jpeg",
     category: "snapback",
-    productId: "2",
+    productId: "snapback-1",
   },
 ];
 

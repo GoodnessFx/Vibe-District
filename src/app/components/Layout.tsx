@@ -110,7 +110,9 @@ export function Layout() {
               <span>✦</span>
               <span>DURAGS</span>
               <span>✦</span>
-              <span>CUSTOM CAPS</span>
+              <span>BEANIES</span>
+              <span>✦</span>
+              <span>FINGER SLEEVES</span>
               <span>✦</span>
               <span>FREE DELIVERY ON ORDERS ABOVE ₦15,000</span>
               <span>✦</span>

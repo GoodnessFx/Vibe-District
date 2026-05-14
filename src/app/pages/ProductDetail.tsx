@@ -16,6 +16,14 @@ export function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
 
+  const handleColorSelect = (color: string, index: number) => {
+    setSelectedColor(color);
+    // If the index matches an image, select it
+    if (product && index < product.images.length) {
+      setSelectedImage(index);
+    }
+  };
+
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -134,10 +142,10 @@ export function ProductDetail() {
               Select Colour: <span className="text-accent">{selectedColor}</span>
             </label>
             <div className="flex flex-wrap gap-3">
-              {product.colors.map((color) => (
+              {product.colors.map((color, index) => (
                 <button
                   key={color}
-                  onClick={() => setSelectedColor(color)}
+                  onClick={() => handleColorSelect(color, index)}
                   className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors ${
                     selectedColor === color
                       ? "border-accent bg-accent text-primary"

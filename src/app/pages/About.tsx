@@ -31,7 +31,7 @@ export function About() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
            <img
-             src="/image.png"
+             src="/products/cap blue green.jpeg"
              alt="Our Story Background"
              className="w-full h-full object-cover"
            />
