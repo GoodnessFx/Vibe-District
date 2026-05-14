@@ -26,7 +26,7 @@ export const products: Product[] = [
     category: "snapback",
     colors: ["Cream"],
     images: [
-      "/products/cap blue.jfif", // The corduroy LA snapback image
+      "/products/Snapback.jpeg",
     ],
     description: "Authentic Vibe District snapback. Premium corduroy finish with iconic LA embroidery. High-quality, affordable, and built for style.",
     stock: 25,
@@ -84,7 +84,7 @@ export const products: Product[] = [
     category: "skull-cap",
     colors: ["Black", "Camo", "Olive", "Grey"],
     images: [
-      "/products/beanie inspiration.jpeg", // The black patterned skull cap (first image)
+      "/products/skullcap.jpg",
     ],
     description: "Sleek Skull Cap. Perfect for under-helmet wear or as a minimal head covering. Premium, affordable, and quality.",
     stock: 30,
@@ -95,9 +95,7 @@ export const products: Product[] = [
     price: 15000,
     category: "custom",
     colors: ["Any Color"],
-    images: [
-      "/products/cap sky blue.jpeg", // Using sky blue as placeholder for custom
-    ],
+    images: [],
     description: "PREORDER: Create your own design! Add your name, logo, or custom embroidery. Hand-crafted specifically for you.",
     stock: 99,
     isNew: true,

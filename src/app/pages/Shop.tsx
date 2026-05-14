@@ -150,7 +150,7 @@ export function Shop() {
                   ) : (
                     <div className="flex flex-col items-center justify-center p-8 text-center">
                       <p className="font-black text-2xl text-muted-foreground/30 uppercase tracking-widest">
-                        Image Pending
+                        Coming Soon
                       </p>
                     </div>
                   )}

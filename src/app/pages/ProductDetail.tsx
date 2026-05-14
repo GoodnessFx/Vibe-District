@@ -96,7 +96,7 @@ export function ProductDetail() {
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-12 text-center">
-                <p className="font-black text-5xl text-muted-foreground/20 uppercase tracking-[0.2em]">
+                <p className="font-black text-3xl md:text-5xl text-muted-foreground/20 uppercase tracking-[0.2em]">
                   Coming Soon
                 </p>
               </div>
