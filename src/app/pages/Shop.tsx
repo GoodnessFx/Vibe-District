@@ -140,12 +140,20 @@ export function Shop() {
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 className="group bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
               >
-                <Link to={`/product/${product.id}`} className="block relative overflow-hidden">
-                  <img
-                    src={product.images[0]}
-                    alt={product.name}
-                    className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
+                <Link to={`/product/${product.id}`} className="block relative overflow-hidden bg-muted min-h-[288px] flex items-center justify-center">
+                  {product.images.length > 0 ? (
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center p-8 text-center">
+                      <p className="font-black text-2xl text-muted-foreground/30 uppercase tracking-widest">
+                        Coming Soon
+                      </p>
+                    </div>
+                  )}
                   {product.isNew && (
                     <span className="absolute top-4 right-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold">
                       NEW

@@ -86,13 +86,21 @@ export function ProductDetail() {
             key={selectedImage}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mb-4 rounded-lg overflow-hidden bg-card"
+            className="mb-4 rounded-lg overflow-hidden bg-muted min-h-[500px] flex items-center justify-center"
           >
-            <img
-              src={product.images[selectedImage]}
-              alt={product.name}
-              className="w-full h-[500px] object-cover"
-            />
+            {product.images.length > 0 ? (
+              <img
+                src={product.images[selectedImage]}
+                alt={product.name}
+                className="w-full h-[500px] object-cover"
+              />
+            ) : (
+              <div className="flex flex-col items-center justify-center p-12 text-center">
+                <p className="font-black text-5xl text-muted-foreground/20 uppercase tracking-[0.2em]">
+                  Coming Soon
+                </p>
+              </div>
+            )}
           </motion.div>
           <div className="flex gap-4">
             {product.images.map((img, index) => (

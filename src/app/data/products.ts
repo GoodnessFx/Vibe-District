@@ -2,8 +2,8 @@ import { Product } from "../types";
 
 export const products: Product[] = [
   {
-    id: "snapback-1",
-    name: "Vibe District Snapback",
+    id: "cap-1",
+    name: "Cap",
     price: 10000,
     category: "snapback",
     colors: ["Black", "Blue Green", "Blue", "Red", "Sky Blue"],
@@ -15,9 +15,22 @@ export const products: Product[] = [
       "/products/cap sky blue.jpeg",
       "/products/cap blue.jfif",
     ],
-    description: "Premium quality Vibe District snapback. Available in multiple colors to match your style. Professional finish and comfortable fit.",
+    description: "Premium quality Vibe District cap. Available in multiple colors to match your style. Professional finish and comfortable fit.",
     stock: 50,
     isBestSeller: true,
+  },
+  {
+    id: "snapback-1",
+    name: "Snapback",
+    price: 10000,
+    category: "snapback",
+    colors: ["Cream"],
+    images: [
+      "/products/cap blue.jfif", // This will be the new Snapback image
+    ],
+    description: "Authentic Vibe District snapback. Premium corduroy finish with iconic embroidery.",
+    stock: 25,
+    isNew: true,
   },
   {
     id: "durag-1",
@@ -66,27 +79,25 @@ export const products: Product[] = [
   },
   {
     id: "skull-cap-1",
-    name: "Professional Skull Cap",
+    name: "Skull Cap",
     price: 4000,
     category: "skull-cap",
-    colors: ["Black"],
+    colors: ["Black", "Camo", "Olive", "Grey"],
     images: [
-      "/products/beanie inspiration.jpeg", // Using a placeholder if no specific skull cap image
+      "/products/beanie inspiration.jpeg", // This is the third image provided
     ],
-    description: "Sleek and professional skull cap. Perfect for under-helmet wear or as a minimal head covering.",
+    description: "Sleek Skull Cap. Perfect for under-helmet wear or as a minimal head covering.",
     stock: 30,
   },
   {
     id: "custom-1",
     name: "Custom Design Cap",
-    price: 15000, // Adjusted price for custom work
+    price: 15000,
     category: "custom",
     colors: ["Any Color"],
-    images: [
-      "/products/cap sky blue.jpeg",
-    ],
-    description: "Create your own design! Add your name, logo, or custom embroidery. Contact us for details.",
-    stock: 10,
+    images: [], // Removed image for coming soon
+    description: "COMING SOON: Create your own design! Add your name, logo, or custom embroidery. Contact us for details.",
+    stock: 0,
     isNew: true,
   },
 ];
