@@ -48,18 +48,16 @@ export function About() {
             <h2 className="text-4xl font-black mb-8 text-accent">Our Story</h2>
             <div className="space-y-6 text-lg md:text-xl font-medium text-white/90 leading-relaxed">
               <p>
-                Born in the heart of Lagos, <span className="text-accent font-black">Vibe District</span> represents the fusion of premium quality
-                and authentic street culture. We believe that headwear is more than just an
-                accessory—it's a statement of identity, a reflection of your vibe.
+                Founded by a visionary entrepreneur from Lagos, <span className="text-accent font-black">Vibe District</span> is established and run from the heart of <span className="text-accent">OUI Ife</span>. 
+                The brand is led by a dedicated nursing student who balances the rigors of healthcare education with a passion for premium streetwear.
               </p>
               <p>
-                Every cap and durag we create is designed with meticulous attention to detail,
-                using only the finest materials. From classic snapbacks to custom-embroidered
-                pieces, each product tells a story of craftsmanship and style.
+                We don't just sell headwear; we curate an experience. Vibe District is built on the philosophy of providing 
+                <span className="text-accent font-black"> premium, affordable, and high-quality</span> accessories for those who value style without compromise. 
+                Every piece in our collection is handpicked to ensure it meets our rigorous standards for comfort and aesthetic appeal.
               </p>
               <p>
-                Whether you're stepping out in the city or making waves online, Vibe District has
-                you covered—literally.
+                From the bustling streets of Lagos to the academic halls of Ife, Vibe District represents the hustle, the ambition, and the unique vibe of the modern trendsetter.
               </p>
             </div>
           </motion.div>

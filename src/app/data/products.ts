@@ -26,9 +26,9 @@ export const products: Product[] = [
     category: "snapback",
     colors: ["Cream"],
     images: [
-      "/products/cap blue.jfif", // This will be the new Snapback image
+      "/products/cap blue.jfif", // The corduroy LA snapback image
     ],
-    description: "Authentic Vibe District snapback. Premium corduroy finish with iconic embroidery.",
+    description: "Authentic Vibe District snapback. Premium corduroy finish with iconic LA embroidery. High-quality, affordable, and built for style.",
     stock: 25,
     isNew: true,
   },
