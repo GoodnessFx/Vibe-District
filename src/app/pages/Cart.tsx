@@ -74,9 +74,9 @@ export function Cart() {
             return (
               <div
                 key={`${item.product.id}-${item.color}`}
-                className="group bg-card rounded-2xl p-6 flex gap-6 shadow-sm hover:shadow-md transition-all border border-border/50"
+                className="group bg-card rounded-2xl p-4 sm:p-6 flex flex-row gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all border border-border/50"
               >
-                <div className="relative w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden bg-muted">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-xl overflow-hidden bg-muted">
                   <img
                     src={itemImage}
                     alt={item.product.name}
@@ -84,53 +84,53 @@ export function Cart() {
                   />
                 </div>
                 
-                <div className="flex-1 flex flex-col">
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
+                <div className="flex-1 flex flex-col min-w-0">
+                  <div className="flex justify-between items-start mb-2 gap-2">
+                    <div className="min-w-0">
                       <Link
                       to={`/product/${item.product.id}`}
-                      className="font-black text-xl hover:text-accent transition-colors block"
+                      className="font-black text-lg sm:text-xl hover:text-accent transition-colors block truncate"
                     >
                       {item.product.name}
                       {item.product.isPreorder && (
-                        <span className="ml-2 text-xs bg-orange-500 text-white px-2 py-0.5 rounded font-black uppercase tracking-tighter">
+                        <span className="ml-2 text-[10px] sm:text-xs bg-orange-500 text-white px-2 py-0.5 rounded font-black uppercase tracking-tighter inline-block align-middle">
                           Preorder
                         </span>
                       )}
                     </Link>
-                      <p className="text-muted-foreground font-medium">Colour: {item.color}</p>
+                      <p className="text-muted-foreground font-medium text-sm sm:text-base">Colour: {item.color}</p>
                     </div>
                     <button
                       onClick={() => removeFromCart(item.product.id, item.color)}
-                      className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-all"
+                      className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-all flex-shrink-0"
                       title="Remove item"
                     >
                       <Trash2 className="w-5 h-5" />
                     </button>
                   </div>
 
-                  <div className="mt-auto flex items-center justify-between">
-                    <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-xl border border-border">
+                  <div className="mt-auto flex flex-col min-[450px]:flex-row min-[450px]:items-center justify-between gap-3">
+                    <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-xl border border-border w-fit">
                       <button
                         onClick={() =>
                           updateQuantity(item.product.id, item.color, item.quantity - 1)
                         }
-                        className="p-2 hover:bg-card rounded-lg transition-colors disabled:opacity-50"
+                        className="p-1.5 sm:p-2 hover:bg-card rounded-lg transition-colors disabled:opacity-50"
                         disabled={item.quantity <= 1}
                       >
-                        <Minus className="w-4 h-4" />
+                        <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </button>
-                      <span className="font-black w-10 text-center text-lg">{item.quantity}</span>
+                      <span className="font-black w-8 sm:w-10 text-center text-base sm:text-lg">{item.quantity}</span>
                       <button
                         onClick={() =>
                           updateQuantity(item.product.id, item.color, item.quantity + 1)
                         }
-                        className="p-2 hover:bg-card rounded-lg transition-colors"
+                        className="p-1.5 sm:p-2 hover:bg-card rounded-lg transition-colors"
                       >
-                        <Plus className="w-4 h-4" />
+                        <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </button>
                     </div>
-                    <p className="text-2xl font-black">
+                    <p className="text-xl sm:text-2xl font-black whitespace-nowrap">
                       ₦{(item.product.price * item.quantity).toLocaleString()}
                     </p>
                   </div>
