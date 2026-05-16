@@ -74,65 +74,69 @@ export function Cart() {
             return (
               <div
                 key={`${item.product.id}-${item.color}`}
-                className="group bg-card rounded-2xl p-4 sm:p-6 flex flex-row gap-4 sm:gap-6 shadow-sm hover:shadow-md transition-all border border-border/50"
+                className="group bg-card rounded-xl p-4 sm:p-5 flex items-center gap-4 sm:gap-6 border border-border/60 hover:border-accent/30 transition-all duration-300"
               >
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0 rounded-xl overflow-hidden bg-muted">
+                {/* Image Container */}
+                <div className="relative w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0 rounded-lg overflow-hidden bg-muted border border-border/50">
                   <img
                     src={itemImage}
                     alt={item.product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 
-                <div className="flex-1 flex flex-col min-w-0">
-                  <div className="flex justify-between items-start mb-2 gap-2">
+                {/* Content Container */}
+                <div className="flex-1 min-w-0 flex flex-col h-20 sm:h-28 justify-between">
+                  <div className="flex justify-between items-start gap-2">
                     <div className="min-w-0">
                       <Link
-                      to={`/product/${item.product.id}`}
-                      className="font-black text-lg sm:text-xl hover:text-accent transition-colors block truncate"
-                    >
-                      {item.product.name}
-                      {item.product.isPreorder && (
-                        <span className="ml-2 text-[10px] sm:text-xs bg-orange-500 text-white px-2 py-0.5 rounded font-black uppercase tracking-tighter inline-block align-middle">
-                          Preorder
-                        </span>
-                      )}
-                    </Link>
-                      <p className="text-muted-foreground font-medium text-sm sm:text-base">Colour: {item.color}</p>
+                        to={`/product/${item.product.id}`}
+                        className="font-bold text-base sm:text-lg hover:text-accent transition-colors block truncate leading-tight"
+                      >
+                        {item.product.name}
+                        {item.product.isPreorder && (
+                          <span className="ml-2 text-[9px] bg-accent/10 text-accent border border-accent/20 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider inline-block align-middle">
+                            Preorder
+                          </span>
+                        )}
+                      </Link>
+                      <p className="text-muted-foreground text-xs sm:text-sm mt-1">
+                        <span className="opacity-70">Colour:</span> <span className="font-medium text-foreground/80">{item.color}</span>
+                      </p>
                     </div>
                     <button
                       onClick={() => removeFromCart(item.product.id, item.color)}
-                      className="p-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-lg transition-all flex-shrink-0"
+                      className="p-1.5 text-muted-foreground hover:text-destructive hover:bg-destructive/5 rounded-md transition-all flex-shrink-0"
                       title="Remove item"
                     >
-                      <Trash2 className="w-5 h-5" />
+                      <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
 
-                  <div className="mt-auto flex flex-col min-[450px]:flex-row min-[450px]:items-center justify-between gap-3">
-                    <div className="flex items-center gap-1 bg-muted/50 p-1 rounded-xl border border-border w-fit">
+                  {/* Quantity and Price Row */}
+                  <div className="flex items-center justify-between gap-4 mt-auto">
+                    <div className="flex items-center bg-muted/40 rounded-lg border border-border/50 overflow-hidden">
                       <button
-                        onClick={() =>
-                          updateQuantity(item.product.id, item.color, item.quantity - 1)
-                        }
-                        className="p-1.5 sm:p-2 hover:bg-card rounded-lg transition-colors disabled:opacity-50"
+                        onClick={() => updateQuantity(item.product.id, item.color, item.quantity - 1)}
+                        className="p-1.5 sm:p-2 hover:bg-muted/80 text-muted-foreground transition-colors disabled:opacity-30"
                         disabled={item.quantity <= 1}
                       >
-                        <Minus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        <Minus className="w-3.5 h-3.5" />
                       </button>
-                      <span className="font-black w-8 sm:w-10 text-center text-base sm:text-lg">{item.quantity}</span>
+                      <span className="font-bold w-8 text-center text-sm sm:text-base text-foreground/90">{item.quantity}</span>
                       <button
-                        onClick={() =>
-                          updateQuantity(item.product.id, item.color, item.quantity + 1)
-                        }
-                        className="p-1.5 sm:p-2 hover:bg-card rounded-lg transition-colors"
+                        onClick={() => updateQuantity(item.product.id, item.color, item.quantity + 1)}
+                        className="p-1.5 sm:p-2 hover:bg-muted/80 text-muted-foreground transition-colors"
                       >
-                        <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        <Plus className="w-3.5 h-3.5" />
                       </button>
                     </div>
-                    <p className="text-xl sm:text-2xl font-black whitespace-nowrap">
-                      ₦{(item.product.price * item.quantity).toLocaleString()}
-                    </p>
+                    
+                    <div className="text-right">
+                      <p className="text-lg sm:text-xl font-bold text-foreground">
+                        ₦{(item.product.price * item.quantity).toLocaleString()}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
