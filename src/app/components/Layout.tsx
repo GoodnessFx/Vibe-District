@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from "react-router";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { WhatsAppIcon } from "./ui/WhatsAppIcon";
+import { NewArrivalsPopup } from "./NewArrivalsPopup";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,6 +26,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-background">
+      <NewArrivalsPopup />
       {/* Header */}
       <header className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-md">
         <div className="mx-auto flex items-center justify-between px-4 py-4 max-w-7xl lg:px-8">
