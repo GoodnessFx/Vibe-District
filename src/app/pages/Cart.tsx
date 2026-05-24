@@ -15,14 +15,12 @@ export function Cart() {
     const items = cart
       .map(
         (item: CartItem, i: number) =>
-          `${i + 1}. ${item.product.name} (${item.color}) x${item.quantity} - ₦${(
-            item.product.price * item.quantity
-          ).toLocaleString()}`
+          `[${i + 1}] ${item.product.name} — ${item.color} — ₦${item.product.price.toLocaleString()} × ${item.quantity}`
       )
       .join("\n");
 
     const message = encodeURIComponent(
-      `Hi Vibe District! 👋\n\nI'd like to place an order:\n\n${items}\n\n💰 Subtotal: ₦${getCartTotal().toLocaleString()}\n🚚 Delivery: ₦${deliveryFee.toLocaleString()}\n💵 Total: ₦${total.toLocaleString()}\n\nPlease confirm availability and delivery details. Thank you!`
+      `Hi Vibe District! 👕\n\nMy order:\n\n${items}\n\n🛒 Subtotal: ₦${getCartTotal().toLocaleString()}\n🚚 Delivery: ₦${deliveryFee.toLocaleString()}\n💰 Total: ₦${total.toLocaleString()}\n\n📦 Deliver to: [Please enter address]\n📱 My number: [Please enter phone]\n\nPlease confirm all available! 🔥`
     );
     window.open(`https://wa.me/2348140082457?text=${message}`, "_blank");
   };

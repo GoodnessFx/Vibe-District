@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ArrowRight, Truck, Users, Shield, Gift } from "lucide-react";
+import { ArrowRight, Truck, Users, Shield, Gift, Zap } from "lucide-react";
 import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+
+const SOCIAL_PROOFS = [
+  "Emeka from Lagos just copped a Snapback ⚡",
+  "Tunde from Abuja just ordered a Durag 🔥",
+  "Chioma from Port Harcourt just joined the tribe ✨",
+  "Kola from Ibadan just ordered a Beanie ❄️",
+  "Ayo from Lagos just copped a Chain ⛓️",
+];
 
 export function Home() {
   const { addToCart } = useCart();
   const featuredProducts = products.filter((p) => p.isBestSeller).slice(0, 4);
+  const [proofIndex, setProofIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProofIndex((prev) => (prev + 1) % SOCIAL_PROOFS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleAddToCart = (productId: string) => {
     const product = products.find((p) => p.id === productId);
@@ -18,54 +34,93 @@ export function Home() {
 
   return (
     <div className="overflow-x-hidden">
+      {/* Social Proof Ticker */}
+      <div className="fixed bottom-24 left-4 z-[40] hidden md:block">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={proofIndex}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            className="bg-white/90 backdrop-blur-md border border-accent/20 px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-sm font-medium"
+          >
+            <Zap className="w-4 h-4 text-accent fill-accent" />
+            <span>{SOCIAL_PROOFS[proofIndex]}</span>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center bg-gradient-to-br from-primary via-muted-foreground to-primary text-primary-foreground">
-        <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <section className="relative h-[100vh] flex items-center justify-center bg-black overflow-hidden">
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
         <img
           src="/hero-banner.png"
           alt="Vibe District Hero"
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-60 scale-105"
         />
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-black tracking-tight mb-6"
+            transition={{ duration: 0.6 }}
+            className="inline-block px-4 py-1.5 mb-6 border border-accent/30 bg-accent/10 rounded-full"
           >
-            It's More Than a Cap.
-            <br />
-            <span className="text-accent">It's a Statement.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            <span className="text-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase">
+              New Season Drop
+            </span>
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 text-primary-foreground/90"
+            className="text-6xl md:text-9xl font-black font-bebas tracking-tighter mb-6 text-[#FAF8F5] leading-[0.9]"
           >
-            Premium streetwear caps and durags for every vibe, every lifestyle.
+            IT'S MORE THAN <br />
+            <span className="text-accent">A STATEMENT.</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl mb-10 text-white/80 max-w-2xl mx-auto font-medium"
+          >
+            Premium streetwear accessories crafted for the bold. 
+            Elevate your vibe with Lagos' finest headwear.
           </motion.p>
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-5 justify-center"
           >
             <Link
               to="/shop"
-              className="inline-flex items-center gap-2 bg-accent text-primary px-8 py-4 rounded-lg font-bold hover:scale-105 transition-transform"
+              className="group relative inline-flex items-center justify-center gap-2 bg-accent text-primary px-10 py-5 rounded-none font-bold overflow-hidden transition-all hover:pr-12"
             >
-              Shop Now
-              <ArrowRight className="w-5 h-5" />
+              <span className="relative z-10">SHOP COLLECTION</span>
+              <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-2 transition-transform" />
             </Link>
             <Link
               to="/lookbook"
-              className="inline-flex items-center gap-2 bg-transparent border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg font-bold hover:bg-primary-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-10 py-5 rounded-none font-bold hover:bg-white hover:text-black transition-all"
             >
-              View Lookbook
+              EXPLORE LOOKBOOK
             </Link>
           </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
+        >
+          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-accent to-transparent animate-pulse"></div>
+        </motion.div>
       </section>
 
       {/* Featured Products */}
@@ -77,46 +132,54 @@ export function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group bg-card border border-border/40 overflow-hidden hover:shadow-2xl transition-all duration-500"
             >
-              <Link to={`/product/${product.id}`} className="block relative overflow-hidden">
+              <Link to={`/product/${product.id}`} className="block relative aspect-[4/5] overflow-hidden bg-muted">
                 <img
                   src={product.images[0]}
                   alt={product.name}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                
                 {product.isNew && (
-                  <span className="absolute top-4 right-4 bg-accent text-primary px-3 py-1 rounded-full text-sm font-bold">
-                    NEW
+                  <span className="absolute top-4 left-4 bg-accent text-primary px-3 py-1 text-[10px] font-black tracking-widest uppercase">
+                    New Drop
                   </span>
                 )}
                 {product.stock <= 5 && (
-                  <span className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-bold">
-                    Only {product.stock} left!
+                  <span className="absolute top-4 right-4 bg-destructive text-white px-3 py-1 text-[10px] font-black tracking-widest uppercase">
+                    Last Pieces
                   </span>
                 )}
               </Link>
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-2">{product.name}</h3>
-                <p className="text-muted-foreground text-sm mb-3">
-                  {product.colors.length} colors available
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black">₦{product.price.toLocaleString()}</span>
-                  <button
-                    onClick={() => handleAddToCart(product.id)}
-                    className="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-accent hover:text-primary transition-colors font-medium"
-                  >
-                    Add to Cart
-                  </button>
+              
+              <div className="p-5">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-bold text-lg uppercase tracking-tight truncate flex-1">
+                    {product.name}
+                  </h3>
+                  <p className="font-mono font-bold text-accent ml-2">
+                    ₦{product.price.toLocaleString()}
+                  </p>
                 </div>
+                <p className="text-xs text-muted-foreground mb-4 line-clamp-1 uppercase tracking-wider">
+                  {product.category}
+                </p>
+                <button
+                  onClick={() => handleAddToCart(product.id)}
+                  className="w-full bg-primary text-primary-foreground py-3 font-bold text-sm hover:bg-accent hover:text-primary transition-colors uppercase tracking-widest"
+                >
+                  Add to Cart
+                </button>
               </div>
             </motion.div>
           ))}

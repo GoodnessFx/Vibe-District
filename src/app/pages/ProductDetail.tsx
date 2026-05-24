@@ -48,7 +48,7 @@ export function ProductDetail() {
 
   const handleWhatsAppOrder = () => {
     const message = encodeURIComponent(
-      `Hi Vibe District! 👋\n\nI'd like to place an order:\n\n🧢 Product: ${product.name}\n🎨 Colour: ${selectedColor}\n🔢 Quantity: ${quantity}\n💰 Total: ₦${(product.price * quantity).toLocaleString()}\n\nPlease confirm availability. Thank you!`
+      `Hi Vibe District! 🧢\n\nI want to order:\n\n🧢 Item: ${product.name}\n🎨 Colour: ${selectedColor}\n🔢 Qty: ${quantity}\n💰 Total: ₦${(product.price * quantity).toLocaleString()}\n\n📦 Deliver to: [Please enter address]\n📱 My number: [Please enter phone]\n\nIs this available? Let's go! 🔥`
     );
     window.open(`https://wa.me/2348140082457?text=${message}`, "_blank");
   };
