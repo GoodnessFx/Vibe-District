@@ -9,7 +9,7 @@ export function About() {
       <section className="relative py-24 md:py-32 flex items-center justify-center overflow-hidden bg-black text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/image-1.png"
+            src="/hero-banner.png"
             alt="About Vibe District"
             className="w-full h-full object-cover opacity-60"
           />
@@ -40,7 +40,7 @@ export function About() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
            <img
-             src="/products/cap blue green.jpeg"
+             src="/products/cap-blue-green.jpeg"
              alt="Our Story Background"
              className="w-full h-full object-cover"
            />

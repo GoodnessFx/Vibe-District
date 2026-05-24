@@ -22,7 +22,7 @@ export function Home() {
       <section className="relative h-[600px] md:h-[700px] flex items-center justify-center bg-gradient-to-br from-primary via-muted-foreground to-primary text-primary-foreground">
         <div className="absolute inset-0 bg-black/40 z-10"></div>
         <img
-          src="/image-1.png"
+          src="/hero-banner.png"
           alt="Vibe District Hero"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
         />
@@ -203,7 +203,7 @@ export function Home() {
               className="aspect-square bg-muted rounded-lg overflow-hidden hover:scale-105 transition-transform"
             >
               <img
-                src={i % 2 === 0 ? "/image.png" : "/image-1.png"}
+                src={i % 2 === 0 ? "/social-preview.png" : "/hero-banner.png"}
                 alt={`Instagram post ${i + 1}`}
                 className="w-full h-full object-cover"
               />
