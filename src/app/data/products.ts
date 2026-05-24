@@ -30,7 +30,6 @@ export const products: Product[] = [
     ],
     description: "Authentic Vibe District snapback. Premium corduroy finish with iconic LA embroidery. High-quality, affordable, and built for style.",
     stock: 25,
-    isNew: true,
   },
   {
     id: "durag-1",
@@ -61,7 +60,6 @@ export const products: Product[] = [
     ],
     description: "Keep warm and stylish with our premium beanies. High-quality knit with various designs. Premium, affordable, and high-quality.",
     stock: 40,
-    isNew: true,
     isBestSeller: true,
   },
   {
@@ -76,7 +74,6 @@ export const products: Product[] = [
     ],
     description: "High-sensitivity gaming finger sleeves. Perfect for mobile gaming, providing smooth movement and sweat resistance. Sold per pair.",
     stock: 200,
-    isNew: true,
   },
   {
     id: "skull-cap-1",
@@ -143,7 +140,6 @@ export const products: Product[] = [
     images: [],
     description: "PREORDER: Create your own design! Add your name, logo, or custom embroidery. Hand-crafted specifically for you.",
     stock: 99,
-    isNew: true,
     isPreorder: true,
   },
 ];

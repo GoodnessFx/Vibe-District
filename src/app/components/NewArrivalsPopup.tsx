@@ -14,7 +14,7 @@ import { useNavigate } from "react-router";
 export function NewArrivalsPopup() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const newProducts = products.filter((p) => p.isNew).slice(0, 3);
+  const newProducts = [...products].filter((p) => p.isNew).reverse().slice(0, 4);
 
   useEffect(() => {
     const hasShown = sessionStorage.getItem("newArrivalsShown");
@@ -32,7 +32,7 @@ export function NewArrivalsPopup() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-xl">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-primary flex items-center gap-2">
             New Arrivals! <span role="img" aria-label="fire">🔥</span>
@@ -41,7 +41,7 @@ export function NewArrivalsPopup() {
             We've just added some fresh new items to our collection. Check them out before they're gone!
           </DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-3 gap-4 py-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4">
           {newProducts.map((product) => (
             <div key={product.id} className="flex flex-col items-center gap-2 group cursor-pointer" onClick={() => {
               setOpen(false);
