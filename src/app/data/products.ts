@@ -145,7 +145,7 @@ export const products: Product[] = [
   {
     id: "watch-1",
     name: "Valenzo Luxury Wrist Watch",
-    price: 25000,
+    price: 10000,
     category: "watch",
     colors: ["Gold/Black"],
     images: ["/products/valenzo-watch.jpeg"],
