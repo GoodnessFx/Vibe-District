@@ -6,11 +6,12 @@ import { useCart } from "../context/CartContext";
 import { motion, AnimatePresence } from "motion/react";
 
 const SOCIAL_PROOFS = [
-  "Emeka from Lagos just copped a Snapback ⚡",
+  "Emeka from Lagos just copped a Valenzo Watch ⌚",
   "Tunde from Abuja just ordered a Durag 🔥",
   "Chioma from Port Harcourt just joined the tribe ✨",
   "Kola from Ibadan just ordered a Beanie ❄️",
   "Ayo from Lagos just copped a Chain ⛓️",
+  "Bisi from Lekki just ordered a Valenzo Watch ⌚",
 ];
 
 export function Home() {
