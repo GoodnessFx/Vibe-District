@@ -5,7 +5,7 @@ import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { motion } from "motion/react";
 
-type Category = "all" | "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap";
+type Category = "all" | "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap" | "necklace" | "watch" | "accessories";
 type SortBy = "newest" | "price-low" | "price-high" | "best-selling";
 
 export function Shop() {
@@ -79,6 +79,8 @@ export function Shop() {
                 { value: "snapback", label: "Snapbacks" },
                 { value: "durag", label: "Durags" },
                 { value: "beanie", label: "Beanies" },
+                { value: "watch", label: "Wrist Watches" },
+                { value: "necklace", label: "Necklaces" },
                 { value: "finger-sleeves", label: "Finger Sleeves" },
                 { value: "skull-cap", label: "Skull Caps" },
                 { value: "custom", label: "Custom Caps" },

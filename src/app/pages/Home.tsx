@@ -16,6 +16,7 @@ const SOCIAL_PROOFS = [
 export function Home() {
   const { addToCart } = useCart();
   const featuredProducts = products.filter((p) => p.isBestSeller).slice(0, 4);
+  const newArrivals = products.filter((p) => p.isNew).slice(0, 4);
   const [proofIndex, setProofIndex] = useState(0);
 
   useEffect(() => {
@@ -121,6 +122,72 @@ export function Home() {
         >
           <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-accent to-transparent animate-pulse"></div>
         </motion.div>
+      </section>
+
+      {/* New Arrivals Section */}
+      <section className="py-20 px-4 max-w-7xl mx-auto border-b border-border/10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="text-left">
+            <h2 className="text-5xl md:text-7xl font-black font-bebas tracking-tighter mb-4">
+              NEW <span className="text-accent">ARRIVALS</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-md">
+              The latest drops from Vibe District. Stay ahead of the curve with our newest accessories.
+            </p>
+          </div>
+          <Link
+            to="/shop"
+            className="group inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all uppercase tracking-widest text-sm"
+          >
+            Explore All Arrivals
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {newArrivals.map((product, index) => (
+            <motion.div
+              key={`new-${product.id}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group bg-card border border-border/40 overflow-hidden hover:shadow-2xl transition-all duration-500"
+            >
+              <Link to={`/product/${product.id}`} className="block relative aspect-[4/5] overflow-hidden bg-muted">
+                <img
+                  src={product.images[0]}
+                  alt={product.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                <span className="absolute top-4 left-4 bg-accent text-primary px-3 py-1 text-[10px] font-black tracking-widest uppercase">
+                  New Drop
+                </span>
+              </Link>
+              
+              <div className="p-5">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-bold text-lg uppercase tracking-tight truncate flex-1">
+                    {product.name}
+                  </h3>
+                  <p className="font-mono font-bold text-accent ml-2">
+                    ₦{product.price.toLocaleString()}
+                  </p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-4 line-clamp-1 uppercase tracking-wider">
+                  {product.category}
+                </p>
+                <button
+                  onClick={() => handleAddToCart(product.id)}
+                  className="w-full bg-primary text-primary-foreground py-3 font-bold text-sm hover:bg-accent hover:text-primary transition-colors uppercase tracking-widest"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* Featured Products */}
