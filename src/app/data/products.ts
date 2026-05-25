@@ -2,18 +2,6 @@ import { Product } from "../types";
 
 export const products: Product[] = [
   {
-    id: "watch-1",
-    name: "Valenzo Luxury Wrist Watch",
-    price: 25000,
-    category: "watch",
-    colors: ["Gold/Black"],
-    images: ["/products/valenzo-watch.jpeg"],
-    description: "The Valenzo Luxury Wrist Watch is a masterpiece of design and precision. Featuring a sleek gold finish with a deep black dial, it's the perfect statement piece for any outfit. High-quality craftsmanship for the bold and stylish.",
-    stock: 10,
-    isNew: true,
-    isBestSeller: true,
-  },
-  {
     id: "cap-1",
     name: "Cap",
     price: 10000,
@@ -153,5 +141,17 @@ export const products: Product[] = [
     description: "PREORDER: Create your own design! Add your name, logo, or custom embroidery. Hand-crafted specifically for you.",
     stock: 99,
     isPreorder: true,
+  },
+  {
+    id: "watch-1",
+    name: "Valenzo Luxury Wrist Watch",
+    price: 25000,
+    category: "watch",
+    colors: ["Gold/Black"],
+    images: ["/products/valenzo-watch.jpeg"],
+    description: "The Valenzo Luxury Wrist Watch is a masterpiece of design and precision. Featuring a sleek gold finish with a deep black dial, it's the perfect statement piece for any outfit. High-quality craftsmanship for the bold and stylish.",
+    stock: 10,
+    isNew: true,
+    isBestSeller: true,
   },
 ];

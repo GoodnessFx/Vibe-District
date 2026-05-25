@@ -17,7 +17,7 @@ const SOCIAL_PROOFS = [
 export function Home() {
   const { addToCart } = useCart();
   const featuredProducts = products.filter((p) => p.isBestSeller).slice(0, 4);
-  const newArrivals = products.filter((p) => p.isNew).slice(0, 4);
+  const newArrivals = [...products].filter((p) => p.isNew).reverse().slice(0, 4);
   const [proofIndex, setProofIndex] = useState(0);
 
   useEffect(() => {

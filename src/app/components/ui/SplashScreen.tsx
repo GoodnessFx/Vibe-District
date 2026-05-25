@@ -65,7 +65,7 @@ export function SplashScreen() {
               transition={{ duration: 1, delay: 1.8 }}
               className="text-[10px] md:text-xs font-medium text-[#D4AF37]/60 tracking-[0.4em] uppercase text-center"
             >
-              Accessorize Your Statement
+              The Fashion Street
             </motion.div>
           </div>
 
