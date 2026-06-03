@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: "cap-1",
     name: "Cap",
-    price: 10000,
+    price: 7000,
     category: "snapback",
     colors: ["Black", "Blue Green", "Blue", "Red", "Sky Blue"],
     images: [
@@ -22,7 +22,7 @@ export const products: Product[] = [
   {
     id: "snapback-1",
     name: "Snapback",
-    price: 10000,
+    price: 7000,
     category: "snapback",
     colors: ["Cream"],
     images: [
