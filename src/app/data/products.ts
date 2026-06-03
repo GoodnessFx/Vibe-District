@@ -34,7 +34,7 @@ export const products: Product[] = [
   {
     id: "durag-1",
     name: "Premium Satin Durag",
-    price: 4000,
+    price: 3500,
     category: "durag",
     colors: ["Black", "Navy", "Burgundy", "Gold"],
     images: [
