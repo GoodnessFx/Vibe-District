@@ -14,19 +14,21 @@ import { useNavigate } from "react-router";
 export function NewArrivalsPopup() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const newProducts = [...products].filter((p) => p.isNew).reverse().slice(0, 4);
+  const newProducts = [...products].filter((p) => p.isNew).reverse();
+  // Create a version based on the new products IDs to track changes
+  const newProductsVersion = newProducts.map(p => p.id).join("-");
 
   useEffect(() => {
-    const hasShown = sessionStorage.getItem("newArrivalsShown");
-    if (!hasShown && newProducts.length > 0) {
+    const storedVersion = sessionStorage.getItem("newArrivalsVersion");
+    if (storedVersion !== newProductsVersion && newProducts.length > 0) {
       // Delay slightly for better UX
       const timer = setTimeout(() => {
         setOpen(true);
-        sessionStorage.setItem("newArrivalsShown", "true");
+        sessionStorage.setItem("newArrivalsVersion", newProductsVersion);
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, [newProducts.length]);
+  }, [newProductsVersion, newProducts.length]);
 
   if (newProducts.length === 0) return null;
 
