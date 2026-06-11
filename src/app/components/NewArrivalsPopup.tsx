@@ -41,7 +41,7 @@ export function NewArrivalsPopup() {
             We've just added some fresh new items to our collection. Check them out before they're gone!
           </DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-4">
+        <div className="grid grid-cols-2 gap-4 py-4">
           {newProducts.map((product) => (
             <div key={product.id} className="flex flex-col items-center gap-2 group cursor-pointer" onClick={() => {
               setOpen(false);

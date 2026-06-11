@@ -167,7 +167,6 @@ export const products: Product[] = [
     images: ["/products/valenzo-watch.jpeg"],
     description: "The Valenzo Luxury Wrist Watch is a masterpiece of design and precision. Featuring a sleek gold finish with a deep black dial, it's the perfect statement piece for any outfit. High-quality craftsmanship for the bold and stylish.",
     stock: 10,
-    isNew: true,
     isBestSeller: true,
   },
 ];
