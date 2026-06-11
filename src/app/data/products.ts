@@ -112,7 +112,6 @@ export const products: Product[] = [
     images: ["/products/dragon-eye-necklace.jpeg"],
     description: "Intricately designed Dragon Eye Amulet. A mystical and bold statement piece for your collection. High-quality craftsmanship and durable finish.",
     stock: 15,
-    isNew: true,
   },
   {
     id: "necklace-2",
@@ -123,7 +122,6 @@ export const products: Product[] = [
     images: ["/products/eagle-pendant-necklace.jpeg"],
     description: "Majestic Eagle Pendant Necklace. Symbolizing strength and freedom. Crafted with premium materials for a professional look.",
     stock: 20,
-    isNew: true,
   },
   {
     id: "necklace-3",
@@ -134,7 +132,6 @@ export const products: Product[] = [
     images: ["/products/mystical-eye-necklace.jpeg"],
     description: "Bold Hip Hop Mystical Eye Necklace. A standout piece that combines urban style with mystical elements. Premium quality and finish.",
     stock: 10,
-    isNew: true,
   },
   {
     id: "pants-chain-1",
@@ -145,7 +142,6 @@ export const products: Product[] = [
     images: ["/products/spider-web-pants-chain.jpeg"],
     description: "Edgy Multi-Layer Pants Chain featuring a spider web design. Perfect for adding a unique touch to your outfit. Durable and stylish.",
     stock: 12,
-    isNew: true,
   },
   {
     id: "custom-1",
