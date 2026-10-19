@@ -7,17 +7,19 @@ import { motion, AnimatePresence } from "motion/react";
 
 const SOCIAL_PROOFS = [
   "Emeka from Lagos just copped a Valenzo Watch ⌚",
+  "Zainab from Lekki just ordered 3D Press-On Nails 💅",
   "Tunde from Abuja just ordered a Durag 🔥",
+  "Amarachi from Ikeja just copped Serpent Shield Sunglasses 🕶️",
   "Chioma from Port Harcourt just joined the tribe ✨",
   "Kola from Ibadan just ordered a Beanie ❄️",
-  "Ayo from Lagos just copped a Chain ⛓️",
-  "Bisi from Lekki just ordered a Valenzo Watch ⌚",
+  "Bisi from Lekki just ordered Satin Bow Hair Clips ✨",
+  "Ayo from Lagos just copped Chunky Square Glasses 🕶️",
 ];
 
 export function Home() {
   const { addToCart } = useCart();
   const featuredProducts = products.filter((p) => p.isBestSeller).slice(0, 4);
-  const newArrivals = [...products].filter((p) => p.isNew).reverse().slice(0, 4);
+  const newArrivals = [...products].filter((p) => p.isNew).reverse().slice(0, 8);
   const [proofIndex, setProofIndex] = useState(0);
 
   useEffect(() => {

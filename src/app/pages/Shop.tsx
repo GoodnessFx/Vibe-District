@@ -1,18 +1,55 @@
-import React, { useState } from "react";
-import { Link } from "react-router";
+import React, { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router";
 import { Filter, X } from "lucide-react";
 import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { motion } from "motion/react";
 
-type Category = "all" | "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap" | "necklace" | "watch" | "accessories";
+type Category = "all" | "snapback" | "durag" | "fitted" | "custom" | "beanie" | "finger-sleeves" | "skull-cap" | "necklace" | "watch" | "accessories" | "cadet-cap" | "eyewear" | "press-on-nails" | "hair-accessories";
 type SortBy = "newest" | "price-low" | "price-high" | "best-selling";
+
+function getColorHex(color: string): string {
+  const c = color.toLowerCase();
+  if (c.includes("black")) return "#111111";
+  if (c.includes("white") || c.includes("ivory") || c.includes("cream")) return "#FAF8F5";
+  if (c.includes("navy")) return "#001f3f";
+  if (c.includes("gold")) return "#d4af37";
+  if (c.includes("silver") || c.includes("smoke") || c.includes("grey") || c.includes("slate")) return "#a0aec0";
+  if (c.includes("blood red") || c.includes("burgundy") || c.includes("wine") || c.includes("crimson") || c.includes("ruby")) return "#800020";
+  if (c.includes("red")) return "#dc2626";
+  if (c.includes("pink") || c.includes("cherry") || c.includes("blossom")) return "#ec4899";
+  if (c.includes("lilac") || c.includes("purple")) return "#a855f7";
+  if (c.includes("blue")) return "#2563eb";
+  if (c.includes("green") || c.includes("sage") || c.includes("mint") || c.includes("lime")) return "#16a34a";
+  if (c.includes("brown") || c.includes("mocha") || c.includes("chocolate") || c.includes("tan")) return "#5c4033";
+  if (c.includes("yellow") || c.includes("mustard")) return "#eab308";
+  return "#6b7280";
+}
 
 export function Shop() {
   const { addToCart } = useCart();
-  const [selectedCategory, setSelectedCategory] = useState<Category>("all");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const categoryParam = searchParams.get("category") as Category | null;
+  const [selectedCategory, setSelectedCategory] = useState<Category>(categoryParam || "all");
   const [sortBy, setSortBy] = useState<SortBy>("newest");
   const [filterOpen, setFilterOpen] = useState(false);
+
+  useEffect(() => {
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [categoryParam]);
+
+  const handleCategoryChange = (cat: Category) => {
+    setSelectedCategory(cat);
+    setFilterOpen(false);
+    if (cat === "all") {
+      searchParams.delete("category");
+      setSearchParams(searchParams);
+    } else {
+      setSearchParams({ category: cat });
+    }
+  };
 
   const handleAddToCart = (productId: string) => {
     const product = products.find((p) => p.id === productId);
@@ -76,14 +113,19 @@ export function Shop() {
             <div className="space-y-2">
               {[
                 { value: "all", label: "All Products" },
-                { value: "snapback", label: "Snapbacks" },
+                { value: "press-on-nails", label: "Press-On Nails 💅" },
+                { value: "eyewear", label: "Eyewear & Shades 🕶️" },
+                { value: "hair-accessories", label: "Hair Glam & Clips ✨" },
+                { value: "snapback", label: "Snapbacks & Caps" },
                 { value: "durag", label: "Durags" },
                 { value: "beanie", label: "Beanies" },
                 { value: "watch", label: "Wrist Watches" },
                 { value: "necklace", label: "Necklaces" },
                 { value: "finger-sleeves", label: "Finger Sleeves" },
                 { value: "skull-cap", label: "Skull Caps" },
+                { value: "cadet-cap", label: "Cadet Caps" },
                 { value: "custom", label: "Custom Caps" },
+                { value: "accessories", label: "Chains & Accessories" },
               ].map((cat) => (
                 <label key={cat.value} className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -91,10 +133,7 @@ export function Shop() {
                     name="category"
                     value={cat.value}
                     checked={selectedCategory === cat.value}
-                    onChange={(e) => {
-                      setSelectedCategory(e.target.value as Category);
-                      setFilterOpen(false);
-                    }}
+                    onChange={(e) => handleCategoryChange(e.target.value as Category)}
                     className="w-4 h-4 accent-accent"
                   />
                   <span>{cat.label}</span>
@@ -183,16 +222,7 @@ export function Shop() {
                         key={i}
                         className="w-6 h-6 rounded-full border-2 border-border"
                         style={{
-                          backgroundColor:
-                            color === "Black"
-                              ? "#000"
-                              : color === "Navy"
-                              ? "#001f3f"
-                              : color === "Cream"
-                              ? "#faf8f5"
-                              : color === "Gold"
-                              ? "#d4af37"
-                              : "#888",
+                          backgroundColor: getColorHex(color),
                         }}
                         title={color}
                       ></div>

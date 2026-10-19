@@ -104,19 +104,19 @@ export function Layout() {
       </header>
 
       {/* Marquee Ticker */}
-      <div className="bg-accent text-primary overflow-hidden py-2">
+      <div className="bg-accent text-primary overflow-hidden py-2 font-bold text-xs tracking-wider uppercase">
         <div className="animate-marquee whitespace-nowrap flex gap-8">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="inline-flex gap-8 items-center">
-              <span>NEW DROPS</span>
+              <span>🔥 NEW DEALS & DROPS</span>
               <span>✦</span>
-              <span>SNAPBACKS</span>
+              <span>PRESS-ON NAILS 💅</span>
               <span>✦</span>
-              <span>DURAGS</span>
+              <span>Y2K & VINTAGE EYEWEAR 🕶️</span>
               <span>✦</span>
-              <span>BEANIES</span>
+              <span>LUXURY HAIR GLAM & BOWS ✨</span>
               <span>✦</span>
-              <span>FINGER SLEEVES</span>
+              <span>STREETWEAR CAPS & SNAPBACKS</span>
               <span>✦</span>
               <span>FREE DELIVERY ON ORDERS ABOVE ₦15,000</span>
               <span>✦</span>
