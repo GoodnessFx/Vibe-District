@@ -62,13 +62,15 @@ export function NewArrivalsPopup() {
                 navigate(`/product/${product.id}`);
               }}
             >
-              <div className="relative aspect-square w-full overflow-hidden bg-muted">
+              <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-muted to-muted/50">
                 <img
                   src={product.images[0]}
                   alt={product.name}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="eager"
+                  decoding="async"
+                  className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="absolute top-1.5 right-1.5 bg-accent/90 text-primary px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider">
+                <span className="absolute top-1.5 right-1.5 bg-accent/95 text-primary px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider shadow-sm">
                   NEW DEAL
                 </span>
               </div>
