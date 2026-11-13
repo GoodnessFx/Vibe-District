@@ -86,13 +86,13 @@ export function ProductDetail() {
             key={selectedImage}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mb-4 rounded-lg overflow-hidden bg-muted min-h-[500px] flex items-center justify-center"
+            className="mb-4 rounded-lg overflow-hidden bg-muted min-h-[400px] sm:min-h-[500px] flex items-center justify-center"
           >
             {product.images.length > 0 ? (
               <img
                 src={product.images[selectedImage]}
                 alt={product.name}
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[400px] sm:h-[500px] object-cover"
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-12 text-center">

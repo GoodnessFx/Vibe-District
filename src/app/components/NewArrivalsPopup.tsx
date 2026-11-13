@@ -35,7 +35,7 @@ export function NewArrivalsPopup() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-2xl max-h-[90vh] flex flex-col p-4 sm:p-6 overflow-hidden">
+      <DialogContent className="sm:max-w-2xl max-h-[92vh] flex flex-col p-4 sm:p-6 overflow-hidden">
         <DialogHeader className="space-y-2">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black tracking-wider uppercase bg-accent text-primary">
@@ -52,7 +52,7 @@ export function NewArrivalsPopup() {
         </DialogHeader>
 
         {/* Scrollable Products Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 py-3 overflow-y-auto max-h-[50vh] pr-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 py-3 pb-4 overflow-y-auto max-h-[60vh] md:max-h-[50vh] pr-1">
           {newProducts.map((product) => (
             <div
               key={product.id}
@@ -73,7 +73,7 @@ export function NewArrivalsPopup() {
                 </span>
               </div>
               <div className="p-2 flex flex-col flex-1 justify-between">
-                <span className="text-[11px] sm:text-xs font-bold line-clamp-1 group-hover:text-accent transition-colors">
+                <span className="text-[11px] sm:text-xs font-bold line-clamp-2 sm:line-clamp-1 group-hover:text-accent transition-colors">
                   {product.name}
                 </span>
                 <span className="text-xs font-black text-accent mt-1">
