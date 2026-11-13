@@ -34,7 +34,7 @@ export const products: Product[] = [
   {
     id: "durag-1",
     name: "Premium Satin Durag",
-    price: 3500,
+    price: 2500,
     category: "durag",
     colors: ["Black", "Navy", "Burgundy", "Gold"],
     images: [
@@ -169,7 +169,7 @@ export const products: Product[] = [
   {
     id: "sunglasses-serpent-1",
     name: "Cyberpunk Serpent Shield Sunglasses",
-    price: 7500,
+    price: 4500,
     category: "eyewear",
     colors: ["Silver / Smoke"],
     images: [
@@ -182,7 +182,7 @@ export const products: Product[] = [
   {
     id: "glasses-narrow-1",
     name: "Retro Narrow Rectangle Glasses",
-    price: 6500,
+    price: 3000,
     category: "eyewear",
     colors: ["Glossy Black", "Tortoiseshell", "Black/Pink Two-Tone"],
     images: [
@@ -195,7 +195,7 @@ export const products: Product[] = [
   {
     id: "glasses-chunky-square-1",
     name: "Chunky Bold Square Statement Glasses",
-    price: 6500,
+    price: 2500,
     category: "eyewear",
     colors: ["Glossy Black", "Clear Crystal", "Tortoiseshell", "Neon Pink", "Pastel Pink"],
     images: [
@@ -211,7 +211,7 @@ export const products: Product[] = [
   {
     id: "glasses-floral-temple-1",
     name: "Vintage Floral Temple Reading Glasses",
-    price: 6000,
+    price: 4000,
     category: "eyewear",
     colors: ["Ruby Red"],
     images: [
@@ -226,7 +226,7 @@ export const products: Product[] = [
   {
     id: "hair-bow-satin-1",
     name: "Oversized Satin Ribbon Bow Hair Clip",
-    price: 3500,
+    price: 1500,
     category: "hair-accessories",
     colors: ["Ivory White", "Classic Black", "Tan Brown", "Soft Pink", "Navy Blue"],
     images: [
@@ -253,7 +253,7 @@ export const products: Product[] = [
   {
     id: "hair-plumeria-claw-1",
     name: "Pearly Plumeria Flower Resin Claw Clip",
-    price: 3500,
+    price: 500,
     category: "hair-accessories",
     colors: ["Pearly White", "Marble Blossom Pink", "Deep Burgundy Plum"],
     images: [
@@ -266,7 +266,7 @@ export const products: Product[] = [
   {
     id: "hair-claw-patterns-1",
     name: "Aesthetic Pastel & Pattern Hair Claw Clips",
-    price: 3500,
+    price: 700,
     category: "hair-accessories",
     colors: ["Cherry Print", "Strawberry Print", "Heart Print", "Pastel Lilac", "Matte Pink", "Sage Mint", "Matte Wine"],
     images: [
@@ -279,7 +279,7 @@ export const products: Product[] = [
   {
     id: "hair-polka-headband-1",
     name: "Polka Dot Satin Hair Headband & Wrap",
-    price: 3000,
+    price: 700,
     category: "hair-accessories",
     colors: ["Classic Black", "Royal Blue", "Magenta Pink", "Lilac Purple", "Lime Green", "Chocolate Brown"],
     images: [
@@ -292,7 +292,7 @@ export const products: Product[] = [
   {
     id: "hair-grommet-headband-1",
     name: "Ribbed Knit Metal Eyelet Grommet Headband",
-    price: 3500,
+    price: 2000,
     category: "hair-accessories",
     colors: ["Slate Blue", "Crimson Red", "Pure White", "Mustard Yellow"],
     images: [
@@ -305,7 +305,7 @@ export const products: Product[] = [
   {
     id: "hair-scarf-chain-1",
     name: "Luxury Chain Print Silk Satin Head Scarf",
-    price: 4500,
+    price: 1500,
     category: "hair-accessories",
     colors: ["Blush Pink & White"],
     images: [
@@ -320,7 +320,7 @@ export const products: Product[] = [
   {
     id: "nails-blood-red-snake-1",
     name: "Blood Red Serpent 3D Stiletto Press-On Nails",
-    price: 5500,
+    price: 2500,
     category: "press-on-nails",
     colors: ["Blood Red / Nude"],
     images: [
@@ -346,7 +346,7 @@ export const products: Product[] = [
   {
     id: "nails-cherry-kisses-bow-1",
     name: "Cherry Wine Kisses & Gold Bow Press-On Nails",
-    price: 5500,
+    price: 2500,
     category: "press-on-nails",
     colors: ["Cherry Wine Red"],
     images: [
@@ -359,7 +359,7 @@ export const products: Product[] = [
   {
     id: "nails-berry-ombre-rhinestone-1",
     name: "Berry Wine Ombre Crystal Rhinestone Press-On Nails",
-    price: 5500,
+    price: 2500,
     category: "press-on-nails",
     colors: ["Berry Wine Ombre"],
     images: [
@@ -372,7 +372,7 @@ export const products: Product[] = [
   {
     id: "nails-classic-burgundy-1",
     name: "Classic Glossy Deep Burgundy Press-On Nails",
-    price: 3500,
+    price: 2000,
     category: "press-on-nails",
     colors: ["Deep Burgundy"],
     images: [
@@ -385,7 +385,7 @@ export const products: Product[] = [
   {
     id: "nails-3d-mermaid-seashell-1",
     name: "3D Mermaid Shell & Hibiscus Stiletto Press-On Nails",
-    price: 6000,
+    price: 2500,
     category: "press-on-nails",
     colors: ["Mermaid Pearl / Hibiscus Pink"],
     images: [
@@ -411,7 +411,7 @@ export const products: Product[] = [
   {
     id: "nails-black-french-bow-pearl-1",
     name: "Black French Bow & Pearl Beaded Press-On Nails",
-    price: 5500,
+    price: 2000,
     category: "press-on-nails",
     colors: ["Black / Nude Pearl"],
     images: [
