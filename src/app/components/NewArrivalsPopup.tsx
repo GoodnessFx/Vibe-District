@@ -52,33 +52,42 @@ export function NewArrivalsPopup() {
         </DialogHeader>
 
         {/* Scrollable Products Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 py-3 pb-4 overflow-y-auto max-h-[60vh] md:max-h-[50vh] pr-1">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-3 pb-4 overflow-y-auto pr-1 max-h-[62vh] md:max-h-[68vh]"
+          style={{ minHeight: 200 }}
+        >
           {newProducts.map((product) => (
             <div
               key={product.id}
-              className="group flex flex-col bg-card border border-border/60 hover:border-accent rounded-lg overflow-hidden cursor-pointer transition-all hover:shadow-md"
+              className="group flex flex-col bg-card border border-border/60 rounded-xl overflow-hidden cursor-pointer transition-all hover:shadow-lg hover:shadow-accent/20"
               onClick={() => {
                 setOpen(false);
                 navigate(`/product/${product.id}`);
               }}
             >
-              <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-muted to-muted/50">
+              {/* Product Image */}
+              <div
+                className="relative w-full h-48 sm:h-52 bg-gradient-to-br from-muted to-muted/50 overflow-hidden"
+              >
                 <img
                   src={product.images[0]}
                   alt={product.name}
                   loading="eager"
                   decoding="async"
-                  className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                 />
-                <span className="absolute top-1.5 right-1.5 bg-accent/95 text-primary px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider shadow-sm">
+                {/* Fallback gradient so card is never blank if image is slow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-200/40 to-gray-100/40 pointer-events-none" />
+                <span className="absolute top-2 right-2 bg-black/80 text-white px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider shadow-lg">
                   NEW DEAL
                 </span>
               </div>
-              <div className="p-2 flex flex-col flex-1 justify-between">
-                <span className="text-[11px] sm:text-xs font-bold line-clamp-2 sm:line-clamp-1 group-hover:text-accent transition-colors">
+              {/* Product Info */}
+              <div className="p-3 flex flex-col gap-1.5">
+                <span className="text-xs sm:text-sm font-bold line-clamp-2 text-primary group-hover:text-accent transition-colors leading-tight">
                   {product.name}
                 </span>
-                <span className="text-xs font-black text-accent mt-1">
+                <span className="text-sm font-black text-accent">
                   ₦{product.price.toLocaleString()}
                 </span>
               </div>
