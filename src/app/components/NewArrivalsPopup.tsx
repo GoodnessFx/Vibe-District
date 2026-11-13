@@ -15,7 +15,10 @@ import { ArrowRight, Flame } from "lucide-react";
 export function NewArrivalsPopup() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const newProducts = [...products].filter((p) => p.isNew).reverse();
+  const newProducts = [...products]
+    .filter((p) => p.isNew)
+    .reverse()
+    .slice(0, 4);
   // Create a version based on the new products IDs to track changes
   const newProductsVersion = "deals-v3-" + newProducts.map(p => p.id).slice(0, 5).join("-");
 
