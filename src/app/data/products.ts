@@ -437,7 +437,7 @@ export const products: Product[] = [
   {
     id: "nails-flared-duck-tip-floral-1",
     name: "Flared Duck Tip 3D Floral & Gold Charm Press-On Nails",
-    price: 5500,
+    price: 2500,
     category: "press-on-nails",
     colors: ["Pink & White"],
     images: [
@@ -476,7 +476,7 @@ export const products: Product[] = [
   {
     id: "press-on-nails-30pcs-pure-white-toenails-1",
     name: "30pcs Pure White Short Press-On Toenails",
-    price: 1500,
+    price: 2000,
     category: "press-on-nails",
     colors: ["Pure White"],
     images: [
